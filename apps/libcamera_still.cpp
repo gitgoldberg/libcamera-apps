@@ -44,7 +44,7 @@ static std::string generate_filename(StillOptions const *options)
 		std::time(&raw_time);
 		char time_string[32];
 		std::tm *time_info = std::localtime(&raw_time);
-		std::strftime(time_string, sizeof(time_string), "%m%d%H%M%S", time_info);
+		std::strftime(time_string, sizeof(time_string), "%Y-%m-%d_%H%M%S", time_info);
 		snprintf(filename, sizeof(filename), "%s%s.%s", folder.c_str(), time_string, options->encoding.c_str());
 	}
 	else if (options->timestamp)
